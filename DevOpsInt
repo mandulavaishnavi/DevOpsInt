@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Register</h2>
+
+    <form onsubmit="register(event)">
+        <input type="text" id="name" placeholder="Enter Name" required>
+
+        <input type="email" id="email" placeholder="Enter Email" required>
+
+        <input type="password" id="password"
+               placeholder="Enter Password" required minlength="6">
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="message"></p>
+</div>
+
+<script>
+    function register(event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        document.getElementById("message").innerHTML =
+            "Registration Successful! Welcome " + name;
+
+        console.log("Name:", name);
+        console.log("Email:", email);
+    }
+</script>
+
+</body>
+</html>
